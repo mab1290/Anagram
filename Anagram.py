@@ -30,6 +30,8 @@ def IsAnagram(incoming):
         if dict1 == dict2:
             tf = True
             result(tf, first, second)
+        else:
+            result(tf, first, second)
         
 def inputting():
     incoming = raw_input("Please enter two phrases, separated by commas ")
