@@ -35,8 +35,6 @@ def IsAnagram(incoming):
         
 def inputting():
     incoming = raw_input("Please enter two phrases, separated by commas ")
-    if incoming == "stop":
-        pass
     commacount = 0
     for letter in incoming:
         if letter is ",":
