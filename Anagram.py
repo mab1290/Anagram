@@ -1,9 +1,7 @@
 # Name: Anagram.py
 # Description: Checks two inputs to determine if they are anagrams of each other.
 # Language: Python 2.7
-# Date Created: 8/24/2014
-# Author: Mike Brenezy
-# Author: David Mauriello
+# Date Created: 8/19/2014
 
 def inputting():
     # Checks the user inputs to see if they are (a) only 2 and (b) words
@@ -13,7 +11,7 @@ def inputting():
         if letter is ",":
             commacount +=1
 
-    if commacount =! 1:
+    if commacount is not 1:
         print "You do not have excatly one comma, fix it."
         inputting()
     else:    
@@ -56,7 +54,7 @@ def result(tf, first, second):
     if tf == True:
         print first.capitalize() + " and " + second.capitalize() + " are anagrams."
     else:
-        print second.capitalize() + " and " + second.capitalize() + " are not anagrams."
+        print first.capitalize() + " and " + second.capitalize() + " are not anagrams."
 
 
 def Master(i = 0):
