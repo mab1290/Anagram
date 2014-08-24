@@ -1,7 +1,7 @@
 # Name: Anagram.py
 # Description: Checks two inputs to determine if they are anagrams of each other.
 # Language: Python 2.7
-# Date Created: 8/29/2014
+# Date Created: 8/19/2014
 
 def inputting():
     # Checks the user inputs to see if they are (a) only 2 and (b) words
