@@ -1,10 +1,27 @@
-def result(tf, first, second):
-    if tf == True:
-        print first.capitalize() + " and " + second.capitalize() + " are anagrams."
-    else:
-        print second.capitalize() + " and " + second.capitalize() + " are not anagrams."
+# Name: Anagram.py
+# Description: Checks two inputs to determine if they are anagrams of each other.
+# Language: Python 2.7
+# Date Created: 8/24/2014
+# Author: Mike Brenezy
+# Author: David Mauriello
+
+def inputting():
+    # Checks the user inputs to see if they are (a) only 2 and (b) words
+    incoming = raw_input("Please enter two phrases, separated by commas ")
+    commacount = 0
+    for letter in incoming:
+        if letter is ",":
+            commacount +=1
+
+    if commacount =! 1:
+        print "You do not have excatly one comma, fix it."
+        inputting()
+    else:    
+        incoming = incoming.split(",")
+        return incoming  
 
 def IsAnagram(incoming):
+    # Creates (dictionaries?) to hold all letters of both words and checks to see if they are identical.
     first = incoming[0]
     second = incoming[1]
     first_working = first.replace(" ", "")
@@ -33,31 +50,24 @@ def IsAnagram(incoming):
         else:
             result(tf, first, second)
         
-def inputting():
-    incoming = raw_input("Please enter two phrases, separated by commas ")
-    commacount = 0
-    for letter in incoming:
-        if letter is ",":
-            commacount +=1
 
-    if commacount == 0:
-        print "No commas in your input, fix that."
-        inputting()
-    elif commacount > 1:
-        print "More than one comma detectd, fix that."
-        inputting()
-    else:    
-        incoming = incoming.split(",")
-        return incoming  
+def result(tf, first, second):
+    # Reads the results from inputting function and prints it out to the user
+    if tf == True:
+        print first.capitalize() + " and " + second.capitalize() + " are anagrams."
+    else:
+        print second.capitalize() + " and " + second.capitalize() + " are not anagrams."
 
-def runner(i = 0):    
+
+def Master(i = 0):
+    # The main function that calls all other functions
     if i == 0:
         print "Welcome to the is it an anagram thing"
     incoming = inputting()    
     IsAnagram(incoming)
     print "To stop, please enter 'stop', otherwise,"
-    runner(1)
+    Master(1)
         
     
 
-runner()
+Master()
