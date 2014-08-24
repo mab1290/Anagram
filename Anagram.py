@@ -7,22 +7,22 @@ def result(tf, first, second):
 def IsAnagram(incoming):
     first = incoming[0]
     second = incoming[1]
-    first = first.replace(" ", "")
-    second = second.replace(" ", "")
+    firstw = first.replace(" ", "")
+    secondw = second.replace(" ", "")
     
     tf = False;
-    if len(first) != len(second):
+    if len(firstw) != len(secondw):
         result(tf, first, second)
         
     else:
         dict1 = dict()
         dict2 = dict()
-        for letter in first:
+        for letter in firstw:
             if not dict1.has_key(letter):
                 dict1[letter] = 1
             else: dict1[letter] +=1
             
-        for letter in second:
+        for letter in secondw:
             if not dict2.has_key(letter):
                 dict2[letter] = 1
             else: dict2[letter] +=1
