@@ -19,7 +19,7 @@ def inputting():
         return incoming  
 
 def IsAnagram(incoming):
-    # Creates dictionaries to hold all letters of both words and checks to see if they are identical. ghghghghg
+    # Creates dictionaries to hold all letters of both words and checks to see if they are identical.
     first = incoming[0]
     second = incoming[1]
     first_working = first.translate(None, " -,'?!&*@#")
