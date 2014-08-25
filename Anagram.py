@@ -7,7 +7,7 @@
 import string
 
 def inputting():
-    # Checks the user inputs to see if they are only 2 phrases, splits input into two variables
+    # Checks the user inputs to see if they are (a) only 2 and (b) words
     incoming = raw_input("Please enter two phrases, separated by commas ")
     commacount = 0
     for letter in incoming:
@@ -22,7 +22,7 @@ def inputting():
         return incoming  
 
 def IsAnagram(incoming):
-    # Creates dictionaries to hold all letters of both words and checks to see if they are identical.
+    # Creates (dictionaries?) to hold all letters of both words and checks to see if they are identical.
     first = incoming[0]
     second = incoming[1]
     first_working = first.strip(string.punctuation)
@@ -53,11 +53,11 @@ def IsAnagram(incoming):
         
 
 def result(tf, first, second):
-    # Reads the results from IsAnagram and prints it out to the user
+    # Reads the results from inputting function and prints it out to the user
     if tf == True:
-        print first + " and " + second + " are anagrams."
+        print first.capitalize() + " and " + second.capitalize() + " are anagrams."
     else:
-        print first + " and " + second + " are not anagrams."
+        print first.capitalize() + " and " + second.capitalize() + " are not anagrams."
 
 
 def Master(i = 0):
