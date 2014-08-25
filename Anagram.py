@@ -3,11 +3,8 @@
 # Language: Python 2.7
 # Date Created: 8/19/2014
 
-#imports string
-import string
-
 def inputting():
-    # Checks the user inputs to see if they are (a) only 2 and (b) words
+    # Checks the user inputs to see if they are only 2 phrases, splits input into two variables
     incoming = raw_input("Please enter two phrases, separated by commas ")
     commacount = 0
     for letter in incoming:
@@ -22,11 +19,11 @@ def inputting():
         return incoming  
 
 def IsAnagram(incoming):
-    # Creates (dictionaries?) to hold all letters of both words and checks to see if they are identical.
+    # Creates dictionaries to hold all letters of both words and checks to see if they are identical.
     first = incoming[0]
     second = incoming[1]
-    first_working = first.strip(string.punctuation)
-    second_working = second.strip(string.punctuation)
+    first_working = first.replace(" ", "")
+    second_working = second.replace(" ", "")
     
     tf = False;
     if len(first_working) != len(second_working):
@@ -53,11 +50,11 @@ def IsAnagram(incoming):
         
 
 def result(tf, first, second):
-    # Reads the results from inputting function and prints it out to the user
+    # Reads the results from IsAnagram and prints it out to the user
     if tf == True:
-        print first.capitalize() + " and " + second.capitalize() + " are anagrams."
+        print first + " and " + second + " are anagrams."
     else:
-        print first.capitalize() + " and " + second.capitalize() + " are not anagrams."
+        print first + " and " + second + " are not anagrams."
 
 
 def Master(i = 0):
