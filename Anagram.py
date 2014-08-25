@@ -3,6 +3,9 @@
 # Language: Python 2.7
 # Date Created: 8/19/2014
 
+#imports string
+import string
+
 def inputting():
     # Checks the user inputs to see if they are only 2 phrases, splits input into two variables
     incoming = raw_input("Please enter two phrases, separated by commas ")
@@ -22,8 +25,8 @@ def IsAnagram(incoming):
     # Creates dictionaries to hold all letters of both words and checks to see if they are identical.
     first = incoming[0]
     second = incoming[1]
-    first_working = first.translate(None, " -,'?!&*@#")
-    second_working = Second.translate(None, " -,'?!&*@#")
+    first_working = first.strip(string.punctuation)
+    second_working = second.strip(string.punctuation)
     
     tf = False;
     if len(first_working) != len(second_working):
