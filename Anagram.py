@@ -22,8 +22,8 @@ def IsAnagram(incoming):
     # Creates dictionaries to hold all letters of both words and checks to see if they are identical.
     first = incoming[0]
     second = incoming[1]
-    first_working = first.replace(" ", "")
-    second_working = second.replace(" ", "")
+    first_working = first.translate(None, " -,'?!&*@#")
+    second_working = Second.translate(None, " -,'?!&*@#")
     
     tf = False;
     if len(first_working) != len(second_working):
