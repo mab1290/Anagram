@@ -5,7 +5,7 @@
 
 def inputting():
     # Checks the user inputs to see if they are only 2 phrases, splits input into two variables
-    incoming = raw_input("Please enter two phrases, separated by commas ")
+    incoming = raw_input("Please enter two phrases, separated by a comma. ")
     commacount = 0
     for letter in incoming:
         if letter is ",":
@@ -60,11 +60,14 @@ def result(tf, first, second):
 def Master(i = 0):
     # The main function that calls all other functions
     if i == 0:
-        print "Welcome to the is it an anagram thing"
+        print "Welcome to the 'Is It an Anagram?' function!"
     incoming = inputting()    
     IsAnagram(incoming)
-    print "To stop, please enter 'stop', otherwise,"
-    Master(1)
+    staphit = raw_input("To stop, please enter 'stop', otherwise, press the enter key.")
+    if staphit == 'stop':
+        print "Thanks for using this program!"
+    else:    
+        Master(1)
         
     
 
