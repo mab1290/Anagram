@@ -22,8 +22,8 @@ def IsAnagram(incoming):
     # Creates dictionaries to hold all letters of both words and checks to see if they are identical.
     first = incoming[0]
     second = incoming[1]
-    first_working = first.replace(" ", "").lower()
-    second_working = second.replace(" ", "").lower()
+    first_working = first.replace(" ", "").lower().strip()
+    second_working = second.replace(" ", "").lower().strip()
     
     tf = False;
     if len(first_working) != len(second_working):
@@ -52,9 +52,9 @@ def IsAnagram(incoming):
 def result(tf, first, second):
     # Reads the results from IsAnagram and prints it out to the user
     if tf == True:
-        print first + " and " + second + " are anagrams."
+        print first.strip() + " and " + second.strip() + " are anagrams."
     else:
-        print first + " and " + second + " are not anagrams."
+        print first.strip() + " and " + second.strip() + " are not anagrams."
 
 
 def Master(i = 0):
@@ -63,7 +63,7 @@ def Master(i = 0):
         print "Welcome to the 'Is It an Anagram?' function!"
     incoming = inputting()    
     IsAnagram(incoming)
-    staphit = raw_input("To stop, please enter 'stop', otherwise, press the enter key.")
+    staphit = raw_input("To stop, please enter 'stop', otherwise, press the enter key. ")
     if staphit == 'stop':
         print "Thanks for using this program!"
     else:    
